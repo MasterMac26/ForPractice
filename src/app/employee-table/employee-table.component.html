@@ -1,0 +1,40 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!-- <th scope="col">#</th> -->
+      <th scope="col">Name</th>
+      <th scope="col">Salary</th>
+      <th scope="col">JoinedOn</th>
+      <th scope="col">ContactNo</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+      <th scope="col">Edit | Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of EmployeeTable">
+      <!-- <td>{{ employee.employeeId }}</td> -->
+      <td>{{ employee.employeeName }}</td>
+      <td>{{ employee.employeeSalary }}</td>
+      <td>{{ employee.joinedDate.substring(0, 10) }}</td>
+      <td>{{ employee.contactNo }}</td>
+      <td>{{ employee.emailID }}</td>
+      <td>{{ employee.jobRole }}</td>
+      <td>
+        <button
+          class="btn btn-primary btn-sm"
+          (click)="OnEdit(employee.employeeId)"
+        >
+          Edit
+        </button>
+        |
+        <button
+          class="btn btn-danger btn-sm"
+          (click)="OnDelete(employee.employeeId)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
